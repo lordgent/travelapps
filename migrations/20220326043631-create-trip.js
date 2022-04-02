@@ -56,6 +56,9 @@ module.exports = {
       date_trip: {
         type: Sequelize.DATE
       },
+      description: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         defaultValue: Sequelize.fn("now"),

@@ -21,7 +21,6 @@ exports.authuser = (req, res, next) => {
   }
 };
 
-
 exports.AuthAdm = async (req, res, next) => {
   try {
     req.userid.role !== 1

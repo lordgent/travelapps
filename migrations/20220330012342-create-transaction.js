@@ -23,7 +23,13 @@ module.exports = {
       quota: {
         type: Sequelize.INTEGER
       },
+      fullname: {
+        type: Sequelize.STRING
+      },
       price: {
+        type: Sequelize.STRING
+      },
+      ktp: {
         type: Sequelize.STRING
       },
       subtotal: {
@@ -32,8 +38,26 @@ module.exports = {
       kode: {
         type: Sequelize.STRING
       },
+      iduser: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "users",
+          key: "id",
+        },
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
+      },
       payment: {
         type: Sequelize.STRING
+      },  
+      payment_statusid: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "paymentstatuses",
+          key: "id",
+        },
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
       },
       createdAt: {
         allowNull: false,

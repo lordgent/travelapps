@@ -7,7 +7,8 @@ module.exports = {
       email: 'admin@gmail.com',
       phone: '08817083978',
       role: 1,
-      password: '$2a$10$RLORhiJdvmLCghj8YpM7deZBUOv/iREtJwBXPmIYiUsvM1h0UGL82',
+      isactive: 1,
+      password: '$2a$10$x2IvSW5vasREQx.lefbCCO794JDZOuPxSfVp93iOwpnvEa9IYxmju',
     }], {});
   },
 

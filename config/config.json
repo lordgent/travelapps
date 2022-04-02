@@ -14,10 +14,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "username": "developer22",
+    "password": "password",
+    "database": "travelapps",
+    "host": "103.179.56.100",
     "dialect": "mysql"
   }
 }

@@ -124,7 +124,7 @@ exports.signIn = async (req, res) => {
         }
 
         const token = jwt.sign(
-            { id: data.id, role: data.role, email: data.email, isactive: data.isactive },
+            { id: data.id, fullname: data.fullname, role: data.role, email: data.email, isactive: data.isactive },
             process.env.SECRET
         );
         res.send({

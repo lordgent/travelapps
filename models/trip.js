@@ -10,7 +10,17 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      trip.belongsTo(models.categories, {
+        foreignKey: {
+          name: 'idcategory'
+        }
+      })
+      trip.hasMany(models.transaction, {
+        as:'transactions',
+        foreignKey: {
+          name: 'idtrip'
+        }
+      })
     }
   }
   trip.init({
@@ -22,12 +32,13 @@ module.exports = (sequelize, DataTypes) => {
     price: DataTypes.STRING,
     accomodation: DataTypes.STRING,
     transpotation: DataTypes.STRING,
+    duration: DataTypes.STRING,
     date_trip: DataTypes.DATE,
     idcategory: DataTypes.INTEGER,
     quota: DataTypes.INTEGER,
     avilable: DataTypes.INTEGER,
     sold: DataTypes.INTEGER,
-    idfacility: DataTypes.INTEGER
+    description: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'trip',

@@ -17,3 +17,25 @@ exports.CreateCategory = async(req,res) => {
     })
   }
 }
+
+exports.getCategories = async(req,res) => {
+  try {
+    const data = await categories.findAll({
+      attributes: {
+        exclude: ["createdAt"]
+      }
+    });
+
+    res.send({
+      status: 'success',
+      data
+    })
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      status: 'error',
+      message: 'internal server error'
+    })
+  }
+}
